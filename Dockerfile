@@ -4,6 +4,7 @@ FROM python:alpine
 # ENV KUBECTL_VERSION=$(curl -s https://dl.k8s.io/release/stable.txt)
 
 ADD run.sh /run.sh
+RUN chmod 755 /run.sh
 
 # Install required packages
 RUN apk add --no-cache \
