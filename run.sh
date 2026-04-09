@@ -6,6 +6,7 @@ echo "Setting up Scaleway CLI config"
 # Scaleway CLI config (expects env vars)
 : "${SCW_ACCESS_KEY:?missing}"
 : "${SCW_SECRET_KEY:?missing}"
+: "${SCW_DEFAULT_ORGANIZATION_ID:?missing}"
 : "${SCW_DEFAULT_PROJECT_ID:?missing}"
 : "${SCW_DEFAULT_REGION:?missing}"   # e.g. fr-par
 : "${SCW_DEFAULT_ZONE:?missing}"     # e.g. fr-par-1
@@ -20,6 +21,7 @@ umask 077
 cat > "${SCW_CONFIG_FILE}" <<EOF
 access_key: ${SCW_ACCESS_KEY}
 secret_key: ${SCW_SECRET_KEY}
+default_organization_id: ${SCW_DEFAULT_ORGANIZATION_ID}
 default_project_id: ${SCW_DEFAULT_PROJECT_ID}
 default_region: ${SCW_DEFAULT_REGION}
 default_zone: ${SCW_DEFAULT_ZONE}
